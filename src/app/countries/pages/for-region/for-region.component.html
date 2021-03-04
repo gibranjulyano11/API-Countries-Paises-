@@ -1,0 +1,22 @@
+<div class="w-full">
+    <hr>
+    <div class="flex items-center justify-start w-full">
+        <div>
+            <h1 class="text-center text-2xl font-semibold font-serif">REGION</h1>
+            <div class='p-5'>
+                <app-region-form (sendName)="searchRegion($event)"></app-region-form>
+                <span class="text-red-500 text-sm" *ngIf="name == '' && submitted">
+                    Campo vacio o no se encontro ningun considencia
+                </span>
+            </div>
+            <div class="flex items-center justify-center">
+                <span class="font-serif text-md" *ngIf="!submitted">
+                    Ninguna busqueda realizada
+                </span>
+            </div>
+            <div class="p-5">
+                <app-region-table [regions]='regions' [submitted]='submitted'></app-region-table>
+            </div>
+        </div>
+    </div>
+</div>
